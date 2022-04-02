@@ -217,9 +217,8 @@ async def bloom_pfploop():
 async def autoname_loop():
     AUTONAMESTART = gvarstatus("autoname") == "true"
     while AUTONAMESTART:
-        DM = time.strftime("%d-%m-%y")
-        HM = time.strftime("%H:%M")
-        name = f"⌚️ {HM}||›  {DEFAULTUSER} ‹||📅 {DM}"
+        HM = time.strftime("%H:%M %p")
+        name = f"{DEFAULTUSER} ⌚{HM}"
         LOGS.info(name)
         try:
             await catub(functions.account.UpdateProfileRequest(first_name=name))
