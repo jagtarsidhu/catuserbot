@@ -217,7 +217,7 @@ async def bloom_pfploop():
 async def autoname_loop():
     AUTONAMESTART = gvarstatus("autoname") == "true"
     while AUTONAMESTART:
-        HM = time.strftime("%H:%M %p")
+        HM = time.strftime("%I:%M %p")
         name = f"ᴊᴀɢᴛᴀʀ | ꜱɪᴅʜᴜ ⌚{HM}"
         LOGS.info(name)
         try:
